@@ -1,4 +1,4 @@
-package com.example.dapos.ui.main.gallery;
+package com.example.dapos.ui.main.feeprov;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,17 +15,17 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.dapos.R;
 
 
-public class GalleryFragment extends Fragment {
+public class FeeProviderFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private FeeProvViewModel feeProvViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        feeProvViewModel =
+                ViewModelProviders.of(this).get(FeeProvViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_fee_provs, container, false);
+        final TextView textView = root.findViewById(R.id.text_slideshow);
+        feeProvViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

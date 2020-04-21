@@ -1,4 +1,4 @@
-package com.example.dapos.ui.main.home;
+package com.example.dapos.ui.main.payment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,17 +15,17 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.dapos.R;
 
 
-public class HomeFragment extends Fragment {
+public class PaymentFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private PaymentViewModel paymentViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        paymentViewModel =
+                ViewModelProviders.of(this).get(PaymentViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_payments, container, false);
+        final TextView textView = root.findViewById(R.id.text_gallery);
+        paymentViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

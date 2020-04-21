@@ -1,4 +1,4 @@
-package com.example.dapos.ui.main.slideshow;
+package com.example.dapos.ui.main.dashboard;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,17 +15,17 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.dapos.R;
 
 
-public class SlideshowFragment extends Fragment {
+public class PaymentFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private PaymentViewModel paymentViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        paymentViewModel =
+                ViewModelProviders.of(this).get(PaymentViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        paymentViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

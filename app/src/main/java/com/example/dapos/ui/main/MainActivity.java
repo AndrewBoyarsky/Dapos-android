@@ -3,7 +3,10 @@ package com.example.dapos.ui.main;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 
+import com.example.dapos.data.LoginRepository;
+import com.example.dapos.data.model.LoggedInUser;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -38,13 +41,22 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
+        View view = navigationView.inflateHeaderView(R.layout.nav_header_main);
+
+        TextView viewById = view.findViewById(R.id.accountTypeTextView);
+        viewById.setText("Account");
+        TextView accountName = view.findViewById(R.id.accountNameTextView);
+        LoginRepository instance = LoginRepository.getInstance(null);
+        LoggedInUser user = instance.getUser();
+        accountName.setText(user.getDisplayName());
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_payments, R.id.nav_fee_provs)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
     }
 
     @Override

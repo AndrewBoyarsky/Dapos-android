@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.dapos.ui.main.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:name="com.example.dapos.ui.main.dashboard.PaymentFragment"
+        android:label="@string/menu_dashboard"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -17,9 +17,9 @@
     </fragment>
     <fragment
         android:id="@+id/nav_home_second"
-        android:name="com.example.dapos.ui.main.home.HomeSecondFragment"
+        android:name="com.example.dapos.ui.main.payment.PaymentFragment"
         android:label="@string/home_second"
-        tools:layout="@layout/fragment_home_second">
+        tools:layout="@layout/fragment_payments">
         <action
             android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
             app:destination="@id/nav_home" />
@@ -30,14 +30,14 @@
     </fragment>
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.dapos.ui.main.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_payments"
+        android:name="com.example.dapos.ui.main.payment.PaymentFragment"
+        android:label="@string/menu_payments"
+        tools:layout="@layout/fragment_payments" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.dapos.ui.main.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_fee_provs"
+        android:name="com.example.dapos.ui.main.feeprov.FeeProviderFragment"
+        android:label="@string/menu_fee_providers"
+        tools:layout="@layout/fragment_fee_provs" />
 </navigation>
