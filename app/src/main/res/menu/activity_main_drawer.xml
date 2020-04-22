@@ -13,6 +13,10 @@
             android:icon="@drawable/payment"
             android:title="@string/menu_payments" />
         <item
+            android:id="@+id/nav_chats"
+            android:icon="@drawable/message"
+            android:title="@string/menu_chats" />
+        <item
             android:id="@+id/nav_fee_provs"
             android:icon="@drawable/fee_prov"
             android:title="@string/menu_fee_providers" />

@@ -22,6 +22,7 @@
 
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_payments">Payments</string>
+    <string name="menu_chats">Messages</string>
     <string name="menu_fee_providers">Fee providers</string>
 
     <string name="home_second">Home Second</string>

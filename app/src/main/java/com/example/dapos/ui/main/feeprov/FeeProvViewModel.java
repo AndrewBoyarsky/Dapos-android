@@ -10,7 +10,7 @@ public class FeeProvViewModel extends ViewModel {
 
     public FeeProvViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is fee providers fragment");
     }
 
     public LiveData<String> getText() {
