@@ -30,6 +30,15 @@ public class ChatHist extends AppCompatActivity {
         params.put("sender", userId);
         params.put("pass", LoginRepository.getInstance(null).getUser().getPass());
         boolean isMe = true;
+        View fab = findViewById(R.id.sendInChat);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getBaseContext(), NewMessageActivity.class);
+                intent1.putExtra("recipient", recipient);
+                startActivity(intent1);
+            }
+        });
         if (!recipient.equalsIgnoreCase("ME")) {
             params.put("recipient", recipient);
             isMe = false;
@@ -57,7 +66,7 @@ public class ChatHist extends AppCompatActivity {
                 layout.addView(view);
             }
         } catch (IOException e) {
-            Toast.makeText(getBaseContext(), "Error: " + e.getMessage(), Toast.LENGTH_LONG);
+            Toast.makeText(getApplicationContext(), "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 }

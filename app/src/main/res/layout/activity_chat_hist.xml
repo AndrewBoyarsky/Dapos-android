@@ -43,4 +43,16 @@
         app:layout_constraintLeft_toRightOf="@id/chatHistLabel"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="153dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/sendInChat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|center"
+        android:clickable="true"
+        app:fabCustomSize="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="50dp"
+        app:srcCompat="@drawable/send_in_chat" />
 </androidx.constraintlayout.widget.ConstraintLayout>

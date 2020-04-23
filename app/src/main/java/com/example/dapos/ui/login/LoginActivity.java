@@ -145,7 +145,7 @@ public class LoginActivity extends AppCompatActivity {
         String welcome = getString(R.string.welcome) + model.getDisplayName();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_SHORT).show();
     }
 
     private void showLoginFailed(LoginResult res) {

@@ -8,15 +8,93 @@
 
     <TextView
         android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="164dp"
+        android:layout_height="37dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:text="Your account"
+        android:textAlignment="textStart"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.029"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="166dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="42dp"
+        android:text="Balance"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_home" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="16dp"
+        android:text="Network status"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="164dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="26dp"
+        android:text="Blockchain height"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/cryptoAccountText"
+        android:layout_width="261dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="31dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/text_home"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="192dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="10dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/cryptoAccountText" />
+
+    <TextView
+        android:id="@+id/networkStatusText"
+        android:layout_width="212dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="16dp"
+        android:text="LIVE"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/balanceText" />
+
+    <TextView
+        android:id="@+id/blockchainHeightText"
+        android:layout_width="203dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="30dp"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/networkStatusText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

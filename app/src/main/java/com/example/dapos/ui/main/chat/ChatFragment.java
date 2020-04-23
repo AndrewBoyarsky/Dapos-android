@@ -20,6 +20,7 @@ import com.example.dapos.ChatHist;
 import com.example.dapos.ChatHistoryMessage;
 import com.example.dapos.ChatMessage;
 import com.example.dapos.HttpClient;
+import com.example.dapos.NewMessageActivity;
 import com.example.dapos.R;
 import com.example.dapos.data.LoginRepository;
 import com.example.dapos.ui.main.payment.PaymentViewModel;
@@ -48,13 +49,14 @@ public class ChatFragment extends Fragment {
         viewById.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getContext(), NewMessageActivity.class);
+                startActivity(intent);
             }
         });
         try {
             s = HttpClient.getInstance().get(str, "messages/chats");
         } catch (IOException e) {
-            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
         }
         if (s != null) {
             try {
@@ -97,7 +99,7 @@ public class ChatFragment extends Fragment {
                     table.addView(tableRow);
                 }
             } catch (JsonProcessingException e) {
-                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
             }
 
         }

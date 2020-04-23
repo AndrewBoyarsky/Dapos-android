@@ -104,5 +104,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/sendMess_margin"
+        app:maxImageSize="40dp"
         app:srcCompat="@drawable/send_mes" />
 </androidx.constraintlayout.widget.ConstraintLayout>
