@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ico"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TransactionStatus"></activity>
+        <activity android:name=".SendMoneyActivity"></activity>
+        <activity android:name=".TransactionStatusActivity" />
         <activity android:name=".NewMessageActivity" />
         <activity android:name=".ChatHist" />
         <activity

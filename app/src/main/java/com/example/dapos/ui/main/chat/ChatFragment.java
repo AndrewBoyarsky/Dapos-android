@@ -32,6 +32,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.dapos.ui.main.dashboard.DashboardFragment.setClipboard;
+
 public class ChatFragment extends Fragment {
 
     private ChatViewModel chatViewModel;
@@ -73,6 +75,17 @@ public class ChatFragment extends Fragment {
                         accountTextView.setText(chatMessage.getSender());
                         accountTextView.setTextSize(9);
                     }
+                    accountTextView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String s = accountTextView.getText().toString();
+                            if (s.equalsIgnoreCase("ME")) {
+                                s = LoginRepository.getInstance(null).getUser().getUserId();
+                            }
+                            setClipboard(getContext(), s);
+                            Toast.makeText(getContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show();
+                        }
+                    });
                     TextView timeView = new TextView(getContext());
                     timeView.setPadding(120, 0, 0, 0);
                     timeView.setText(String.valueOf(chatMessage.getHeight()));

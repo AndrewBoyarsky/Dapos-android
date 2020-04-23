@@ -1,5 +1,6 @@
 package com.example.dapos.ui.main.dashboard;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,17 @@ public class DashboardFragment extends Fragment {
 
     private DashboardViewModel dashboardViewModel;
 
+    public static void setClipboard(Context context, String text) {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.HONEYCOMB) {
+            android.text.ClipboardManager clipboard = (android.text.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            clipboard.setText(text);
+        } else {
+            android.content.ClipboardManager clipboard = (android.content.ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Text", text);
+            clipboard.setPrimaryClip(clip);
+        }
+    }
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         dashboardViewModel =
@@ -29,7 +41,14 @@ public class DashboardFragment extends Fragment {
         final TextView accountIdView = root.findViewById(R.id.cryptoAccountText);
         accountIdView.setText(LoginRepository.getInstance(null).getUser().getUserId());
         TextView heightText = root.findViewById(R.id.blockchainHeightText);
-
+        accountIdView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String s = accountIdView.getText().toString();
+                setClipboard(getContext(), s);
+                Toast.makeText(getContext(), "Copied to clipboard", Toast.LENGTH_SHORT).show();
+            }
+        });
         dashboardViewModel.getHeight().observe(getViewLifecycleOwner(), new Observer<Long>() {
             @Override
             public void onChanged(@Nullable Long s) {
@@ -53,7 +72,9 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onChanged(String s) {
                 if (s != null) {
-                    Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+                    if (!s.contains("account")) {
+                        Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });

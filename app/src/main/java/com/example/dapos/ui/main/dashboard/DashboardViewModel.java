@@ -44,7 +44,7 @@ public class DashboardViewModel extends ViewModel implements Runnable{
             } catch (IOException e) {
                 errorText.postValue("Network error: " + e.getMessage());
             }
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         }
     }
 }

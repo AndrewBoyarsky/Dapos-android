@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.example.dapos.data.LoginRepository;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 public class NewMessageActivity extends AppCompatActivity {
 
@@ -52,7 +51,7 @@ public class NewMessageActivity extends AppCompatActivity {
                     try {
                         String response = HttpClient.getInstance().postBody(data, "txs/messages");
                         TransactionSendResponse value = HttpClient.mapper.readValue(response, TransactionSendResponse.class);
-                        Intent intent1 = new Intent(getBaseContext(), TransactionStatus.class);
+                        Intent intent1 = new Intent(getBaseContext(), TransactionStatusActivity.class);
                         intent1.putExtra("height", String.valueOf(value.getResult().getHeight()));
                         intent1.putExtra("hash", value.getResult().getHash());
                         startActivity(intent1);
